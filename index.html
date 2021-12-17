@@ -10,11 +10,36 @@
     <div id="app"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
     <script>
+      Vue.component("todo-item", {
+        props: ["todo"],
+        template: `<li>{{todo.title}}</li>`,
+      });
+
+      Vue.component("todo-list", {
+        props: ["todos"],
+        template: `
+        <ul>
+          <todo-item
+          v-for='(todo,index) in todos'
+          :key='index'
+          :todo='todo'>
+          </todo-item>
+          </ul>
+        `,
+      });
+
       const app = new Vue({
         el: "#app",
         data: {
-          todos: [{ title: "Tarea 1", completed: false }],
+          todos: [
+            { title: "Tarea 1", completed: false },
+            { title: "Tarea 2", completed: false },
+            { title: "Tarea 3", completed: false },
+          ],
         },
+        template: `
+        <todo-list :todos='todos'></todo-list>
+        `,
       });
     </script>
   </body>
