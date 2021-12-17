@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="changeVisibility">Mostrar/Ocultar</button>
+      <button @click="changeVisibility">Mostrar/Ocultar</button>
       <ul v-if="mostrar">
         <li v-for="(show, index) in tvshows" :key="index">
           <strong>{{ show.name }}</strong> ({{show.seasons}} Temporadas)
