@@ -9,7 +9,8 @@
   <body>
     <div id="app">
       <button @click="changeVisibility">Mostrar/Ocultar</button>
-      <ul v-if="mostrar">
+      <tv-show-list></tv-show-list>
+      <!-- <ul v-if="mostrar">
         <tv-show
           v-for="(show, index) in tvshows"
           :key="index"
@@ -17,10 +18,10 @@
           :seasons="show.seasons"
         >
         </tv-show>
-        <!-- <li v-for="(show, index) in tvshows" :key="index">
+        <li v-for="(show, index) in tvshows" :key="index">
           <strong>{{ show.name }}</strong> ({{show.seasons}} Temporadas)
-        </li> -->
-      </ul>
+        </li>
+      </ul> -->
       <div v-else>No hay datos</div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
@@ -36,6 +37,16 @@
             ],
           };
         },
+        template: `
+        <ul>
+          <tv-show
+            v-for="(show, index) in tvshows"
+            :key="index"
+            :name="show.name"
+            :seasons="show.seasons">
+          </tv-show>
+        </ul>
+        `,
       });
 
       Vue.component("tv-show", {
