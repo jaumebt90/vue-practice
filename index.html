@@ -8,11 +8,12 @@
   </head>
   <body>
     <div id="app">
-      <ul>
+      <ul v-show="mostrar">
         <li v-for="(show, index) in tvshows" :key="index">
           <strong>{{ show.name }}</strong> ({{show.seasons}} Temporadas)
         </li>
       </ul>
+      <div v-hide="mostrar">No hay datos</div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
     <script>
