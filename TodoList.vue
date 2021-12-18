@@ -9,6 +9,7 @@
 export default {
   name: "todo-list",
   props: ["todos"],
+  methods: {},
 };
 </script>
 
