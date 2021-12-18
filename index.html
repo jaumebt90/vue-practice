@@ -63,6 +63,11 @@
           <todo-add @new='addNewTodo'></todo-add>
         </div>
         `,
+        methods: {
+          addNewTodo: function (todo) {
+            this.todos.push(todo);
+          },
+        },
       });
     </script>
   </body>
