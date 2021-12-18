@@ -17,6 +17,16 @@
           <button>@click='onClick'</button>
           </div>
         `,
+        data: function () {
+          return {
+            title: null,
+          };
+        },
+        methods: {
+          onclick: function () {
+            console.log(this.title);
+          },
+        },
       });
 
       Vue.component("todo-item", {
