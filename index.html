@@ -24,7 +24,8 @@
         },
         methods: {
           onClick: function () {
-            console.log(this.title);
+            //console.log(this.title);
+            this.$emit("new", { title: this.title });
           },
         },
       });
@@ -59,7 +60,7 @@
         template: `
         <div>
           <todo-list :todos='todos'></todo-list>
-          <todo-add></todo-add>
+          <todo-add @new='addNewTodo'></todo-add>
         </div>
         `,
       });
