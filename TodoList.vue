@@ -12,6 +12,7 @@ export default {
   methods: {},
 };
 </script>
+
 <style scoped>
 ul {
   list-style-type: none;
