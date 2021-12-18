@@ -14,7 +14,7 @@
         template: `
         <div>
           <input type='text' v-model='title'/>
-          <button>@click='onClick'</button>
+          <button @click='onClick'>Añadir</button>
           </div>
         `,
         data: function () {
@@ -57,7 +57,10 @@
           ],
         },
         template: `
-        <todo-list :todos='todos'></todo-list>
+        <div>
+          <todo-list :todos='todos'></todo-list>
+          <todo-add></todo-add>
+        </div>
         `,
       });
     </script>
